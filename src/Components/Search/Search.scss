@@ -1,0 +1,97 @@
+$background: #d0f4ea;
+$blue: #465775;
+$green: #56e39f;
+$darkgreen: #5a9b81;
+$brown: #5b846f;
+$bbrown: #5b7866;
+$bbbrown: #5b6c5d;
+
+$heading-font: "Poppins", sans-serif;
+$body-font: "Inter", sans-serif;
+$accent-font: "Courier New", monospace;
+
+$light: 300;
+$regular: 400;
+$bold: 700;
+
+* {
+  background-color: $background;
+  font-family: $heading-font;
+  padding: 0;
+  margin: 0;
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-family: $accent-font;
+  font-size: 5rem;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  height: 75vh;
+  width: 38vw;
+  border: 1px solid black;
+  background: linear-gradient(to right, #89f7fe, #66a6ff);
+  border-radius: 27px;
+  padding: 20px;
+  border: none;
+
+  .items {
+    width: 40vw;
+    background: linear-gradient(to right, #89f7fe, #66a6ff);
+    
+
+    .task {
+      width: 30vw;
+      height: 6vh;
+      border: none;
+      color:white;
+      background-color:black;
+      border-radius: 20px;
+      margin-right: 15px;
+      font-size: 1.5rem;
+      padding: 10px;
+      text-decoration: none;
+
+      &::placeholder {
+        font-size: 1.3rem;
+        font-family: $accent-font;
+      }
+
+      &:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    button{
+      width: 5vw;
+      height: 7.6vh;
+      font-family: $accent-font;
+      border-radius: 8px;
+      background-color: #000000;
+      color:white;
+      border: none;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+    .color{
+        background: linear-gradient(to right, #89f7fe, #66a6ff);
+
+    }
+  }
+}
