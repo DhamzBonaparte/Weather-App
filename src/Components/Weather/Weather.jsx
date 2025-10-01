@@ -50,7 +50,7 @@ export default function Weather({ location, current }) {
           <p className="re">Longitutde: {location.lon}</p>
         </div>
         <div className="picture">
-          <img src={change()} alt={current?.condition?.icon + "_img"} />
+          <img src={current?.condition?.icon} alt={current?.condition?.icon + "_img"} />
           <p className="main">{current?.condition?.text}</p>
         </div>
         <div className="wea">
