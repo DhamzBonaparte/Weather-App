@@ -8,6 +8,10 @@ export default function Search() {
   const [show, setShow] = useState({});
   const [curr, setCurr] = useState({});
 
+  useEffect(() => {
+    handleSend(); 
+  }, []);
+
   const key = "2f105e8297604a7c8ad93557253009";
   
   async function handleSend() {
@@ -26,10 +30,6 @@ export default function Search() {
       console.log(`An Error Occured!`);
     }
   }
-
-  useEffect(() => {
-  handleSend(); 
-}, []);
 
   return (
     <>
