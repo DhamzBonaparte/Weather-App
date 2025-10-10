@@ -1,1 +1,1 @@
-My second project made using React JS
+Timer app made using React JS
