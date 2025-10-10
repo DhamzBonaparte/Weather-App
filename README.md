@@ -1,1 +1,1 @@
-Timer app made using React JS
+Weather app made using React JS
