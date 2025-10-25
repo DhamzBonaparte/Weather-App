@@ -10,7 +10,7 @@ import rain from "../Images/rain.png";
 import snow from "../Images/snow.png";
 import "./Weather.scss";
 
-export default function Weather({ location, current }) {
+export default function Weather({ location, current, loading }) {
   function change() {
     switch (current.condition.text) {
       case "Sunny":
@@ -42,42 +42,52 @@ export default function Weather({ location, current }) {
   return (
     <>
       <div className="main">
-        <h1 className="place">
-          {location.name},{location.country}
-        </h1>
-        <div className="position">
-          <p className="le">Latitude: {location.lat}</p>
-          <p className="re">Longitutde: {location.lon}</p>
-        </div>
-        <div className="picture">
-          <img src={current?.condition?.icon} alt={current?.condition?.icon + "_img"} />
-          <p className="main">{current?.condition?.text}</p>
-        </div>
-        <div className="wea">
-          <div className="left">
-            <div className="sep">
-              <p>
-                <img src={dew} alt="" height="20px" /> Dew: {current.dewpoint_c}
-              </p>
-              <p>
-                <img src={gguusstt} alt="" height="20px" /> Gust:{" "}
-                {current.gust_kph}
-              </p>
+        {loading ? (
+          <h2 style={{ textAlign: "center",background:" linear-gradient(to right, #89f7fe, #66a6ff)",marginTop:"10px" }}>Loading Weather...</h2>
+        ) : (
+          <>
+            <h1 className="place">
+              {location.name},{location.country}
+            </h1>
+            <div className="position">
+              <p className="le">Latitude: {location.lat}</p>
+              <p className="re">Longitutde: {location.lon}</p>
             </div>
-          </div>
-          <div className="right">
-            <div className="sep">
-              <p>
-                <img src={humid} alt="" height="20px" /> Humidity:{" "}
-                {current.humidity}
-              </p>
-              <p>
-                <img src={wind} alt="" height="20px" />
-                Wind: {current.wind_kph}
-              </p>
+            <div className="picture">
+              <img
+                src={current?.condition?.icon}
+                alt={current?.condition?.icon + "_img"}
+              />
+              <p className="main">{current?.condition?.text}</p>
             </div>
-          </div>
-        </div>
+            <div className="wea">
+              <div className="left">
+                <div className="sep">
+                  <p>
+                    <img src={dew} alt="" height="20px" /> Dew:{" "}
+                    {current.dewpoint_c}
+                  </p>
+                  <p>
+                    <img src={gguusstt} alt="" height="20px" /> Gust:{" "}
+                    {current.gust_kph}
+                  </p>
+                </div>
+              </div>
+              <div className="right">
+                <div className="sep">
+                  <p>
+                    <img src={humid} alt="" height="20px" /> Humidity:{" "}
+                    {current.humidity}
+                  </p>
+                  <p>
+                    <img src={wind} alt="" height="20px" />
+                    Wind: {current.wind_kph}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
